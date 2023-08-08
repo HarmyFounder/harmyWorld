@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
+
 
 @RestController
 @RequestMapping("/tasks")
@@ -18,11 +18,6 @@ public class TaskController {
     @GetMapping("/all")
     public List<Task> getAllTasks() {
         return taskService.getAll();
-    }
-
-    @GetMapping("/allWithStatuses")
-    public Map<Integer, List<Task>> getAllSorted() {
-        return taskService.getAllTasksWithStatuses();
     }
 
     @GetMapping("/{id}")
@@ -41,12 +36,12 @@ public class TaskController {
     }
 
     @PutMapping("/{id}/edit")
-    public Task updateTask(@PathVariable("id") Task taskToBeUpdated, Task updatedTask){
+    public Task updateTask(@PathVariable("id") Task taskToBeUpdated, Task updatedTask) {
         return taskService.update(taskToBeUpdated, updatedTask);
     }
 
     @DeleteMapping("/{id}")
-    public void deleteTask(@PathVariable("id") Task task){
+    public void deleteTask(@PathVariable("id") Task task) {
         taskService.delete(task);
     }
 
