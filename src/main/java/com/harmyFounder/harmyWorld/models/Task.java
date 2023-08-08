@@ -3,19 +3,20 @@ package com.harmyFounder.harmyWorld.models;
 import com.harmyFounder.harmyWorld.models.enums.TaskStatus;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 public class Task {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String title;
     private String description;
     private String tag;
     private TaskStatus taskStatus;
-    private int taskStatusIndex;
+
 
     public Task() {
     }
@@ -50,14 +51,6 @@ public class Task {
 
     public void setTaskStatus(TaskStatus taskStatus) {
         this.taskStatus = taskStatus;
-    }
-
-    public int getTaskStatusIndex() {
-        return taskStatusIndex;
-    }
-
-    public void setTaskStatusIndex(int taskStatusIndex) {
-        this.taskStatusIndex = taskStatusIndex;
     }
 
     public void setId(Long id) {
