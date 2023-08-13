@@ -8,7 +8,7 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 @Service
-public class MailService {
+public class MailSendService {
 
     private final String from = "ofbrick121@gmail.com";
      String host = "smtp.gmail.com";
