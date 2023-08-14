@@ -13,5 +13,5 @@
 <h1>Functional</h1>
 <ol>
   <li>OAuth2 Login</li>
-  <li>Users, Notes, To-Do List</li>
+  <li>Users, Notes, To-Do List CRUD</li>
 </ol>
